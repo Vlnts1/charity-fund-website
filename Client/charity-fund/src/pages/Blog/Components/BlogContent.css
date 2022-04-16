@@ -1,0 +1,24 @@
+.blogpage {
+    position: relative;
+}
+
+.preloader {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+}
+
+
+
+.HeaderBlog {
+    text-align: center;
+    margin: 30px;
+}
+
+.addNewPost {
+    text-align: center;
+    margin: 30px;
+    position: relative;
+}
+
+
