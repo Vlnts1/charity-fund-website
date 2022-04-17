@@ -1,4 +1,4 @@
-.AddPostForm {
+.editPostForm {
     position: fixed;
     left: 50%;
     top: 50%;
@@ -10,11 +10,5 @@
     width: 500px;
     border-radius: 10px;
     text-align: center;
-}
-.hidebtn {
-    position: absolute;
-    top: 4px;
-    right: 4px;
-    cursor: pointer;
-    border-radius: 30%;
+
 }

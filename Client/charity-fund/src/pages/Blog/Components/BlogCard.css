@@ -4,8 +4,17 @@
     justify-content: space-between;
     margin: 10px;
 }
-.post-img {
+/* .post-img {
     width: 20px
+} */
+
+.postControl {
+    display: flex;
+    align-items: center;
+    margin: auto;
+}
+.editbtn {
+    margin: 5px;
 }
 
 .deletebtn {

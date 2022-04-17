@@ -3,6 +3,7 @@ import "./BlogCard.css"
 import {Container, Row, Col} from 'react-bootstrap'
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
+import EditIcon from '@mui/icons-material/Edit';
 
 export const BlogCard = ({
     image,
@@ -10,8 +11,15 @@ export const BlogCard = ({
     description,
     liked,
     likePost,
-    deletePost
+    deletePost,
+    handleEditFormShow,
+    handleSelectPost
 }) => {
+
+    const showEditForm = () => {
+        handleSelectPost();
+        handleEditFormShow();
+    }
     const heartFill =  liked ? 'crimson' : 'black'
     
 
@@ -25,11 +33,19 @@ export const BlogCard = ({
                     <button onClick={likePost} type="button" class="btn btn-light">
                         <FavoriteIcon  style={{fill: heartFill}}/>
                     </button></Col>
-            <Col> <div className="deletebtn">
-                        <button onClick={deletePost} type="button" class="btn btn-light">
-                            <DeleteForeverIcon/>
-                        </button>
+            <Col> 
+                <div className="postControl">
+                    <div className="deletebtn">
+                            <button onClick={deletePost} type="button" class="btn btn-light">
+                                <DeleteForeverIcon/>
+                            </button>
                     </div>
+                    <div className="editbtn">
+                            <button type="button" class="btn btn-light" onClick={showEditForm}>
+                                <EditIcon/>
+                            </button>
+                    </div>
+                </div>
             </Col>
         </Row>
     </Container>

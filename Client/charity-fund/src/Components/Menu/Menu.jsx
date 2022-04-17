@@ -1,13 +1,13 @@
 import React from 'react';
 import {Link} from "react-router-dom";
 import {Navbar, Nav, Container,NavDropdown, Form, FormControl, Button} from 'react-bootstrap'
-
+import SearchIcon from '@mui/icons-material/Search';
 
 function Menu() {
   return (
 <Navbar bg="light" expand="lg">
   <Container fluid>
-    {/* <Navbar.Brand href="#">tyt byget logo</Navbar.Brand> */}
+
     <Navbar.Toggle aria-controls="navbarScroll" />
     <Navbar.Collapse id="navbarScroll">
       <Nav
@@ -31,7 +31,8 @@ function Menu() {
           className="me-2"
           aria-label="Search"
         />
-        <Button variant="outline-success">Пошук</Button>
+        <Button variant="outline-success"><SearchIcon/></Button>
+        <Nav.Link as={Link} to={"/login"}>Login</Nav.Link>
       </Form>
     </Navbar.Collapse>
   </Container>
