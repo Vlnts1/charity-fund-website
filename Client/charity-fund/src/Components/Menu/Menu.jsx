@@ -4,6 +4,8 @@ import {Navbar, Nav, Container,NavDropdown, Form, FormControl, Button} from 'rea
 import SearchIcon from '@mui/icons-material/Search';
 
 function Menu() {
+  
+
   return (
 <Navbar bg="light" expand="lg">
   <Container fluid>
@@ -32,7 +34,7 @@ function Menu() {
           aria-label="Search"
         />
         <Button variant="outline-success"><SearchIcon/></Button>
-        <Nav.Link as={Link} to={"/login"}>Login</Nav.Link>
+      
       </Form>
     </Navbar.Collapse>
   </Container>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -18,12 +18,16 @@ import Header from './Components/Header/Header';
 import Menu from './Components/Menu/Menu'
 
 function App() {
+  const [isLoggedIn, setIsLoggedIn] = useState(localStorage.getItem('isLoggedIn')=== 'true')
+  const [userName, setUserName] = useState(localStorage.getItem('userName'))
+  
   return (
 
     <Router>
       <div>
-        <Header/>
+        <Header userName={userName} isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>
           <Menu/>
+
             <Routes>
               <Route exact path='/' element={<Homepage/>} />
               <Route  path='/about' element={<AboutPage/>} />
@@ -32,7 +36,10 @@ function App() {
               <Route  path='/reports' element={<ReportsPage/>} />
               <Route  path='/contacts' element={<ContactsPage/>} />
               
-              <Route  path='/login' element={<LoginPage/>} />
+              <Route  path='/login' element={<LoginPage/>} render={(props)=>
+              <LoginPage {...props} 
+              setIsLoggedIn={setIsLoggedIn}
+              setUserName={setUserName}/>}/>
               <Route  path='/signup' element={<SignupPage/>} />
             </Routes>
             <Footer year={new Date().getFullYear()}/>

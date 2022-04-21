@@ -7,6 +7,8 @@ import {AddPostForm} from './AddPostForm'
 import axios from 'axios'
 import { EditPostForm } from './EditPostForm';
 
+let source;
+
 export class BlogContent extends Component{
 
     state = {
@@ -18,7 +20,8 @@ export class BlogContent extends Component{
     }
     
     fetchPosts = () => {
-        axios.get(postsUrl)
+        source = axios.CancelToken.source();
+        axios.get(postsUrl, { CancelToken: source.token })
             .then((response) => {
                 this.setState({
                     blogArr: response.data,
@@ -32,6 +35,13 @@ export class BlogContent extends Component{
     
     componentDidMount() {
         this.fetchPosts();
+    }
+
+    componentWillUnmount() {
+        if (source) (
+            source.cancel('Axios get canceled')
+        )
+        
     }
 
     likePost = (blogPost) => {
@@ -127,8 +137,6 @@ export class BlogContent extends Component{
         })
     }
 
-   
-
       render() {
         const blogPosts = this.state.blogArr.map((item) => {
             return (
@@ -148,7 +156,6 @@ export class BlogContent extends Component{
         
         if (this.state.blogArr.length === 0)
             return <CircularProgress className="preloader"/>
-            // <h1 style={{textAlign: "center"}}>Завантажую данні...</h1>
         
             const postOpacity = this.state.isPending ? 0.5 : 1
         return(
@@ -177,7 +184,6 @@ export class BlogContent extends Component{
                 <div className='posts' style={{opacity: postOpacity}}>
                     {blogPosts}
                     {this.state.isPending && <CircularProgress className="preloader"/>}
-
                 </div>
             </div>
         );
