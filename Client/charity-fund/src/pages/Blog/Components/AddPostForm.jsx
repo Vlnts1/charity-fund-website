@@ -67,12 +67,7 @@ import  './AddPostForm.css';
                     <Form.Label></Form.Label>
                     <Form.Control as="textarea" placeholder=" Текст "  value={this.state.postDesc} onChange={this.handlePostDescChange} required rows={9} />
                     </Form.Group>
-
-                    {/* <Form.Select className="mb-3">
-                        <option>Вибрати категорію</option>
-                        <option value="posts">Пости</option>
-                        <option value="reports">Звіти</option>
-                    </Form.Select> */}
+                    
                     <Button variant="primary" type="submit" onClick={this.createPost}> Опублікувати </Button>
                 </Form>
             </div>

@@ -1,5 +1,7 @@
 .blogpage {
     position: relative;
+    width:90% ; 
+    margin: 2% auto;
 }
 
 .preloader {

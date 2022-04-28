@@ -1,39 +1,45 @@
 import React, {Link} from 'react';
-import {Nav } from 'react-bootstrap'
-
+import { Nav } from 'react-bootstrap'
+import Menu from './Menu'
 import SocialFollow from "../Header/SocialFollow"
-import LanguageSwitcher from './LanguageSwitcher'
 import ExitToAppIcon from '@mui/icons-material/ExitToApp';
-import { textAlign } from '@mui/system';
 
-function Header(  {isLoggedIn, setIsLoggedIn, userName } ) {
+function Header(  {isLoggedIn, setIsLoggedIn, userName, setIsAdmin } ) {
 
   const handleLogOut = () => {
+    localStorage.removeItem('isLoggedIn', false)
+    localStorage.removeItem('userName')
     setIsLoggedIn(false);
-    localStorage.setItem('isLoggedIn', false)
+    setIsAdmin(false);
   };
   return (
     <div className="App">
   <nav class="navbar navbar-light bg-light">
   <div class="container-fluid">
     <span class="navbar-text">
-    <LanguageSwitcher/>
-    </span>
     { 
           isLoggedIn ?
           <nav style={{textAlign: "center"}}>
-        Ласкаво просимо, <strong> {userName} </strong>
+        Адмін, <strong> {userName} </strong>
         <Nav.Link onClick={handleLogOut} as={Link} to={"/login"}> <ExitToAppIcon/> Logout</Nav.Link>
         </nav>
-        : 'Admin Panel'
+        : 'dyxovnistnacii@gmail.com'
         
       }
+      </span>
     <span class="navbar-text">
       <SocialFollow/>
     </span>
   </div>
 </nav>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+         
+          <Menu/>
     </div>
+    
   );
 }
 

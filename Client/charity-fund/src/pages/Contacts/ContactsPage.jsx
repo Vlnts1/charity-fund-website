@@ -1,15 +1,35 @@
-import React from 'react';
-
-import Textcontainer from './Components/Textcontainer'
-
+import React, { useState} from 'react';
+import { Spring, animated } from 'react-spring'
+import { Container, } from 'react-bootstrap';
+import Textcard from '../../Components/common/Textcard';
 
 function ContactsPage() {
+  const contacts = [
+    { header: 'Контакти',
+     id: 1, title1: 'Електронна адреса', text1: '.....@gmail.com',
+     id: 2, title2: 'Контактні телефони', text2: '38067-(823)-26-32, 38067-(823)-26-32',
+     id: 3, title3: 'Соц.мережі', text3: '...' }
+]
+const [isVisible, setIsVisible] = useState(false);
+
   return (
-    <div>
+    <Spring
+    from={{ opacity: 0, transform: 'translateY(-4rem)'}}
+    to={[
+      { opacity: 1, transform: 'translateY(0rem)' },
+    ]}
+    reverse={isVisible}>
+    {styles => (
+      <animated.div style={styles}>
 
-     <Textcontainer/>
+      <Container style={{margin: "5% auto", width: '60%'}}>
+      {contacts.map((card )=>
+      <Textcard card={card} key={card.id}/>)}
+      </Container>
 
-    </div>
+      </animated.div>
+        )}
+        </Spring>
   );
 }
 

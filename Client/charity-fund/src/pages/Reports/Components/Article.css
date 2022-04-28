@@ -1,0 +1,11 @@
+
+
+.postControl {
+    display: flex;
+    align-items: center;
+    margin: auto;
+}
+
+.deletebtn {
+    text-align: right;
+}

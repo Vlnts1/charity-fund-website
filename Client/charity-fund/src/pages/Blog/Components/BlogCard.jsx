@@ -1,54 +1,71 @@
-import React from "react";
+import React, { useEffect,useState } from "react";
 import "./BlogCard.css"
-import {Container, Row, Col} from 'react-bootstrap'
-import FavoriteIcon from '@mui/icons-material/Favorite';
+import {Container, Row, Button, Card} from 'react-bootstrap'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import EditIcon from '@mui/icons-material/Edit';
+import { useParams } from "react-router-dom";
+import { postsUrl } from "../../../data";
+import axios from "axios";
+import {ReadMoreMore} from 'read-more-more';
+import {Link} from 'react-router-dom'
 
 export const BlogCard = ({
-    image,
     title,
     description,
-    liked,
-    likePost,
     deletePost,
     handleEditFormShow,
-    handleSelectPost
-}) => {
+    handleSelectPost,
+    isAdmin
+    }) => {
 
     const showEditForm = () => {
         handleSelectPost();
         handleEditFormShow();
     }
-    const heartFill =  liked ? 'crimson' : 'black'
-    
+    const {postId} = useParams();
+    const [post, setPost] = useState({});
+
+    useEffect(() => {
+        if (postId) {
+            axios.get(postsUrl + postId)
+            .then((response) => {
+                    setPost(response.data);
+            })
+            .catch((err) => {
+                console.log(err)
+            })
+        }
+       
+    }, [postId, setPost])
 
     return (
         <div className="posts">
-    <Container>
-        <Row>
-            <Col><img src={image}></img></Col>
-            <Col xs={6}><h2>{title}</h2>
-                    <p>{description}</p>
-                    <button onClick={likePost} type="button" class="btn btn-light">
-                        <FavoriteIcon  style={{fill: heartFill}}/>
-                    </button></Col>
-            <Col> 
-                <div className="postControl">
-                    <div className="deletebtn">
-                            <button onClick={deletePost} type="button" class="btn btn-light">
-                                <DeleteForeverIcon/>
-                            </button>
-                    </div>
-                    <div className="editbtn">
-                            <button type="button" class="btn btn-light" onClick={showEditForm}>
-                                <EditIcon/>
-                            </button>
-                    </div>
-                </div>
-            </Col>
-        </Row>
-    </Container>
-    </div>
+            <Container style={{margin: "2% auto", width: '70%'}}>
+                <Row>
+                    <Card body>
+
+                        <h2>{postId? post.title : title}</h2>
+                        <p><ReadMoreMore text={postId? post.description : description} checkFor={100} /></p>
+
+                        {
+                            isAdmin &&(
+                            <div className="postControl" style={{display: "flex"}}>                                
+                            <div className="deletebtn" style={{ marginLeft: "auto" }}>
+                                <button onClick={deletePost} type="button" class="btn btn-light">
+                                    <DeleteForeverIcon/>
+                                </button>
+                            </div>
+                            <div className="editbtn">
+                                <button type="button" class="btn btn-light" onClick={showEditForm}>
+                                    <EditIcon/>
+                                </button>
+                            </div>
+                        </div>   
+                            )
+                        }         
+                    </Card>
+                </Row>
+            </Container>
+        </div>
     )
 }

@@ -1,12 +1,12 @@
 import React, {useState} from 'react';
 
 import { Form, Button, Container, Row, Col} from 'react-bootstrap';
-import { Link } from 'react-router-dom';
 
 function LoginPage( {
     setIsLoggedIn,
     history,
-    setUserName
+    setUserName,
+    setIsAdmin
 } ) {
 
     const [login, setLogin] = useState('');
@@ -26,10 +26,21 @@ function LoginPage( {
 
       localStorage.setItem('isLoggedIn', true);
       localStorage.setItem('userName', login);
-  
-      setUserName(login);
-      setIsLoggedIn(true);
-      history.push('/');
+        // if (login === 'Okarmazina@ukr.net' && password === 'Artist3355') {
+        //     setIsAdmin(true);
+        //     localStorage.getItem('isAdmin', true)
+        // }
+        if (login === 'Okarmazina@ukr.net') {
+            if (password === 'Artist3355') setIsAdmin(true);
+            else { 
+                alert('Введіть правильний логін чи пароль')
+                return false
+            }
+        }
+        setUserName(login);
+        setIsLoggedIn(true);
+        history.push('/');
+      
     }
     
     return(
@@ -58,12 +69,6 @@ function LoginPage( {
                             required/>
                         </Form.Group>
                         <Button variant="primary" type="submit"> Submit </Button>
-                        <div className='py-4'>
-                            <p style={{textAlign: "center"}}>
-                                Don't have an account? 
-                                <Link to="/signup" style={{textDecoration: "none"}}> Sign up </Link>
-                            </p>
-                        </div>
                     </Form>
                 </Col>
             </Row>
