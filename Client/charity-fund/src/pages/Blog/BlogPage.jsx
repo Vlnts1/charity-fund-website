@@ -7,8 +7,7 @@ import {AddPostForm} from './Components/AddPostForm'
 
 import axios from 'axios'
 import { EditPostForm } from './Components/EditPostForm';
-import { Link } from 'react-router-dom';
-import { Button } from 'react-bootstrap';
+
 
 let source;
 
@@ -124,7 +123,6 @@ let source;
                handleSelectPost={() => handleSelectPost(item)}
                isAdmin={isAdmin}
                />
-               <Link to={`/blog/${item.id}`}><Button className="postControl" style={{display: "flex"}}>Читати</Button></Link>
                </React.Fragment>
             );
         });

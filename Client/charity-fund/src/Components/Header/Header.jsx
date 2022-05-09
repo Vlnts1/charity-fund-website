@@ -1,8 +1,9 @@
 import React, {Link} from 'react';
-import { Nav } from 'react-bootstrap'
+import {Container, Col, Row, Nav, Ratio, Card } from 'react-bootstrap'
 import Menu from './Menu'
 import SocialFollow from "../Header/SocialFollow"
 import ExitToAppIcon from '@mui/icons-material/ExitToApp';
+import logomain from "../../assets/logomain.jpg"
 
 function Header(  {isLoggedIn, setIsLoggedIn, userName, setIsAdmin } ) {
 
@@ -21,7 +22,7 @@ function Header(  {isLoggedIn, setIsLoggedIn, userName, setIsAdmin } ) {
           isLoggedIn ?
           <nav style={{textAlign: "center"}}>
         Адмін, <strong> {userName} </strong>
-        <Nav.Link onClick={handleLogOut} as={Link} to={"/login"}> <ExitToAppIcon/> Logout</Nav.Link>
+        <Nav.Link onClick={handleLogOut} exact to="/login"> <ExitToAppIcon/> Logout</Nav.Link>
         </nav>
         : 'dyxovnistnacii@gmail.com'
         
@@ -32,10 +33,18 @@ function Header(  {isLoggedIn, setIsLoggedIn, userName, setIsAdmin } ) {
     </span>
   </div>
 </nav>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
+        <Container>
+        <Row>
+          <Col>
+          <Ratio aspectRatio={50} style={{margin: "2% auto"}}>
+          <Card.Img variant="top" src={logomain} />
+          </Ratio>
+          </Col>
+          <Col></Col>
+          <Col></Col>
+          <br></br>
+        </Row>
+        </Container>
          
           <Menu/>
     </div>

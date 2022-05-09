@@ -43,11 +43,13 @@ function App() {
               <Route  path='/reports' element={<ReportsPage/>} />
               <Route  path='/contacts' element={<ContactsPage/>} />
 
-              <Route  path='/login' element={<LoginPage/>} render={(props)=>
+              <Route  path='/login' element={<LoginPage/>}
+              render={(props)=>
               <LoginPage {...props} 
               setIsLoggedIn={setIsLoggedIn}
               setUserName={setUserName}/>}
               setIsAdmin={setIsAdmin}/>
+              
             </Routes>
             <Footer year={new Date().getFullYear()}/>
       </div>

@@ -7,8 +7,7 @@ function ContactsPage() {
   const contacts = [
     { header: 'Контакти',
      id: 1, title1: 'Електронна адреса', text1: '.....@gmail.com',
-     id: 2, title2: 'Контактні телефони', text2: '38067-(823)-26-32, 38067-(823)-26-32',
-     id: 3, title3: 'Соц.мережі', text3: '...' }
+     id: 2, title2: 'Контактні телефони', text2: '38067-(823)-26-32, 38067-(823)-26-32', }
 ]
 const [isVisible, setIsVisible] = useState(false);
 

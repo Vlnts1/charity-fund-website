@@ -1,13 +1,13 @@
 import React, {useState} from 'react';
-
 import { Form, Button, Container, Row, Col} from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 
 function LoginPage( {
     setIsLoggedIn,
-    history,
     setUserName,
     setIsAdmin
 } ) {
+    const navigate = useNavigate();
 
     const [login, setLogin] = useState('');
     const [password, setPassword] = useState('');
@@ -22,25 +22,23 @@ function LoginPage( {
   
     const handleLogIn = (e) => {
       e.preventDefault();
-  
 
       localStorage.setItem('isLoggedIn', true);
       localStorage.setItem('userName', login);
-        // if (login === 'Okarmazina@ukr.net' && password === 'Artist3355') {
-        //     setIsAdmin(true);
-        //     localStorage.getItem('isAdmin', true)
-        // }
+ 
         if (login === 'Okarmazina@ukr.net') {
-            if (password === 'Artist3355') setIsAdmin(true);
+            if (password === 'Artist3355') setIsAdmin(true)
+            
             else { 
                 alert('Введіть правильний логін чи пароль')
                 return false
             }
         }
+       
+        
         setUserName(login);
         setIsLoggedIn(true);
-        history.push('/');
-      
+        navigate('/blog');
     }
     
     return(
@@ -58,7 +56,7 @@ function LoginPage( {
                             value={login} 
                             required/>
                         </Form.Group>
-      
+           
                         <Form.Group className="mb-3" controlId="formBasicPassword">
                             <Form.Label>Password</Form.Label>
                             <Form.Control 
@@ -68,7 +66,7 @@ function LoginPage( {
                             value={password}
                             required/>
                         </Form.Group>
-                        <Button variant="primary" type="submit"> Submit </Button>
+                        <Button variant="primary" type="submit" onClick={handleLogIn} > Submit </Button>
                     </Form>
                 </Col>
             </Row>

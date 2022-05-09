@@ -7,7 +7,7 @@ function Carouselmain() {
   <Carousel.Item>
     <img
       className=" d-block w-100"
-      src="https://images.pexels.com/photos/3442567/pexels-photo-3442567.jpeg?cs=srgb&dl=pexels-maryia-plashchynskaya-3442567.jpg&fm=jpg/800x400?text=First slide&bg=373940"
+      src="https://cdnuploads.aa.com.tr/uploads/Contents/2022/02/24/thumbs_b_c_959d5129d732e198c474bb46ea5516c7.jpg?v=161316?text=First slide&bg=373940"
       // alt="First slide"
     />
     <Carousel.Caption>

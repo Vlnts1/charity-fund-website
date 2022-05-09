@@ -7,7 +7,6 @@ import { useParams } from "react-router-dom";
 import { postsUrl } from "../../../data";
 import axios from "axios";
 import {ReadMoreMore} from 'read-more-more';
-import {Link} from 'react-router-dom'
 
 export const BlogCard = ({
     title,
@@ -45,7 +44,7 @@ export const BlogCard = ({
                     <Card body>
 
                         <h2>{postId? post.title : title}</h2>
-                        <p><ReadMoreMore text={postId? post.description : description} checkFor={100} /></p>
+                        <p><ReadMoreMore readMoreText="Читати..." text={postId? post.description : description} checkFor={100} /></p>
 
                         {
                             isAdmin &&(

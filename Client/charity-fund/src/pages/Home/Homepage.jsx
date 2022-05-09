@@ -1,6 +1,8 @@
 import React, {useState}  from 'react';
+import ButtonPayload  from './Components/Button';
 import { Spring, animated } from 'react-spring'
-
+import {Carousel, Col} from 'react-bootstrap';
+import Carouselmain from './Components/Carousel';
 import Textcontainer from '../../Components/common/Textcontainer'
 import Cards from './Components/Cards'
 
@@ -20,8 +22,9 @@ function Homepage() {
     reverse={isVisible}>
     {styles => (
     <animated.div style={styles}>
+      <Carouselmain/>
       {homeinfo.map((card)=><Textcontainer card={card}/>)}
-
+      <Col style={{margin: '40px',textAlign: "center"}}><ButtonPayload/></Col>
       <Cards/>
 
     </animated.div>
