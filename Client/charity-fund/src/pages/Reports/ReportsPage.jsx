@@ -1,17 +1,10 @@
 import React, {useState} from 'react';
-import ArticlesList from './Components/ArticlesList';
-import {Form, Card, Button} from 'react-bootstrap'
+import {Row, Card, Container} from 'react-bootstrap'
 import { Spring, animated } from 'react-spring'
+import  './ReportsPage.css';
 
+function ReportsPage() {
 
-function ReportsPage({isAdmin}) {
-  const [articles, setArticles] = useState([
-    {id:1, title: 'Новий звіт1', file: ''},
-    {id:2, title: 'Новий звіт2', file: ''},
-    {id:3, title: 'Новий звіт3', file: ''},
-    {id:4, title: 'Новий звіт4', file: ''},
-    {id:5, title: 'Новий звіт5', file: ''},
-])
 const [isVisible, setIsVisible] = useState(false);
 
 
@@ -26,7 +19,35 @@ const [isVisible, setIsVisible] = useState(false);
       <animated.div style={styles}>
       <div style={{textAlign: 'center', margin: "1% auto"}}>
       <h1> Звіти </h1>
-        <ArticlesList articles={articles}/>
+        <Container style={{margin: "2% auto", width: "59%"}}>
+            <Row>
+                <Card body style={{margin: "2% auto"}}>
+                    <div style={{display: "flex"}}>
+                    <h5><a href="url" download>Звіт 1</a></h5>
+                    </div>
+                </Card>
+                <Card body style={{margin: "2% auto"}}>
+                    <div style={{display: "flex"}}>
+                        <h5><a href="url" download>Звіт 2</a></h5>
+                    </div>
+                </Card>
+                <Card body style={{margin: "2% auto"}}>
+                    <div style={{display: "flex"}}>
+                    <h5><a href="url" download>Звіт 3</a></h5>
+                    </div>
+                </Card>
+                <Card body style={{margin: "2% auto"}}>
+                    <div style={{display: "flex"}}>
+                    <h5><a href="url" download>Звіт 4</a></h5>
+                    </div>
+                </Card>
+                <Card body style={{margin: "2% auto"}}>
+                    <div style={{display: "flex"}}>
+                    <h5><a href="url" download>Звіт 5</a></h5>
+                    </div>
+                </Card>
+            </Row>
+        </Container>
       </div>
       </animated.div>
     )}

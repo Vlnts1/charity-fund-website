@@ -7,6 +7,7 @@ import {AddPostForm} from './Components/AddPostForm'
 
 import axios from 'axios'
 import { EditPostForm } from './Components/EditPostForm';
+import { useGetPosts } from '../../shared/queries';
 
 
 let source;
@@ -18,8 +19,11 @@ let source;
     const [blogArr, setBlogArr] = useState([]);
     const [isPending, setIsPending] = useState(false);
     const [selectedPost, setSelectedPost] = useState({});
+    const {data: posts, isFetching, isLoading, isError, error} = useGetPosts();
+    
+    if (isLoading) return <CircularProgress className="preloader"/>
+    if (isError) return <h1>{error.message}</h1>
 
-  
     const fetchPosts = () => {
         source = axios.CancelToken.source();
         axios.get(postsUrl, { CancelToken: source.token })
@@ -32,16 +36,6 @@ let source;
             })
     }
     
-    useEffect(() => {
-        fetchPosts();
-        return () => {
-            if (source) {
-                source.cancel("Axios get canceled")
-            }
-        }
-    }, [])
-
-
     const deletePost = (blogPost) => {
         if (window.confirm(`Видалити ${blogPost.title}?`)) {
             setIsPending(true);
@@ -112,7 +106,7 @@ let source;
     }
 
 
-        const blogPosts = blogArr.map((item) => {
+        const blogPosts = posts.map((item) => {
             return (
                 <React.Fragment key={item.id}>
                <BlogCard
@@ -127,9 +121,8 @@ let source;
             );
         });
         
-        if (blogArr.length === 0) return <CircularProgress className="preloader"/>
         
-        const postOpacity = isPending ? 0.5 : 1
+        const postOpacity = isFetching ? 0.5 : 1
 
         return(
             <div className='blogPage'>

@@ -8,13 +8,13 @@ function Menu() {
 
   return (
 <Navbar bg="light" expand="lg">
-  <Container fluid style={{width: "90%"}}>
+  <Container fluid style={{width: "90%" }}>
 
     <Navbar.Toggle aria-controls="navbarScroll" />
     <Navbar.Collapse id="navbarScroll">
       <Nav
         className="me-auto my-2 my-lg-0"
-        style={{ maxHeight: '100px' }}
+        style={{ maxHeight: '100px'}}
         navbarScroll
       >
         <Nav.Link as={Link} to={"/"}>Головна</Nav.Link>
@@ -26,16 +26,6 @@ function Menu() {
         </NavDropdown>
         <Nav.Link as={Link} to={"/contacts"}>Контакти</Nav.Link>
       </Nav>
-      <Form className="d-flex">
-        <FormControl
-          type="search"
-          placeholder="Пошук"
-          className="me-2"
-          aria-label="Search"
-        />
-        <Button variant="outline-success"><SearchIcon/></Button>
-      
-      </Form>
     </Navbar.Collapse>
   </Container>
 </Navbar>

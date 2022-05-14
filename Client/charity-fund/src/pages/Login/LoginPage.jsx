@@ -21,7 +21,7 @@ function LoginPage( {
     }
   
     const handleLogIn = (e) => {
-      e.preventDefault();
+      e.preventDefault(navigate('/blog'));
 
       localStorage.setItem('isLoggedIn', true);
       localStorage.setItem('userName', login);
@@ -34,15 +34,13 @@ function LoginPage( {
                 return false
             }
         }
-       
-        
         setUserName(login);
         setIsLoggedIn(true);
-        navigate('/blog');
+        
     }
     
     return(
-        <Container style={{width: "25%"}}>
+        <Container style={{width: "25%", margin: "10% auto"}}>
             <Row>
                 <Col md={12} style={{alignItems: "center", justifyContent: "center"}}>
                     <h1 style={{textAlign: "center"}}>Login</h1>
