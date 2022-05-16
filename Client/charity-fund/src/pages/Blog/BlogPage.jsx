@@ -140,7 +140,7 @@ let source;
                  editBlogPost={editBlogPost}/>
                 )}
 
-                <h1 className="HeaderBlog">Статті</h1>      
+                <h1 className="HeaderBlog" style={{margin: "8% auto"}}>Статті</h1>      
                 {
                     isAdmin && (
                     <div className="addNewPost">

@@ -21,7 +21,7 @@ const [isVisible, setIsVisible] = useState(false);
     {styles => (
       <animated.div style={styles}>
 
-      <Container style={{margin: "5% auto", width: '60%'}}>
+      <Container style={{margin: "20% auto", width: '60%'}}>
       {contacts.map((card )=>
       <Textcard card={card} key={card.id}/>)}
       </Container>

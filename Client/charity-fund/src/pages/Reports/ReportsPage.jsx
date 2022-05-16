@@ -17,7 +17,7 @@ const [isVisible, setIsVisible] = useState(false);
     reverse={isVisible}>
     {styles => (
       <animated.div style={styles}>
-      <div style={{textAlign: 'center', margin: "1% auto"}}>
+      <div style={{textAlign: 'center', margin: "10% auto"}}>
       <h1> Звіти </h1>
         <Container style={{margin: "2% auto", width: "59%"}}>
             <Row>

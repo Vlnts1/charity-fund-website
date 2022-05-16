@@ -40,10 +40,10 @@ function LoginPage( {
     }
     
     return(
-        <Container style={{width: "25%", margin: "10% auto"}}>
+        <Container style={{width: "25%", margin: "15% auto"}}>
             <Row>
                 <Col md={12} style={{alignItems: "center", justifyContent: "center"}}>
-                    <h1 style={{textAlign: "center"}}>Login</h1>
+                    <h1 style={{textAlign: "center", margin: "10% auto"}}>Login</h1>
                     <Form onSubmit={handleLogIn}>
                         <Form.Group className="mb-3" controlId="formBasicEmail">
                             <Form.Label>Email address</Form.Label>

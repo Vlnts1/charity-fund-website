@@ -28,7 +28,7 @@ const [isVisible, setIsVisible] = useState(false);
       <Row classname="mt-2">
         <Col>
           <animated.div style={styles}>
-              <h1 style={{textAlign: "center", margin: "2% auto"}}> Проекти</h1>
+              <h1 style={{textAlign: "center", margin: "10% auto"}}> Проекти</h1>
               <Projectslist  projects={projects}/>
           </animated.div>
         </Col>

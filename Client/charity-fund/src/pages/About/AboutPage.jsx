@@ -24,7 +24,7 @@ function AboutPage() {
     reverse={isVisible}>
     {styles => (
       <animated.div style={styles}>
-    <Container style={{margin: "2% auto", width: '60%'}}>
+    <Container style={{margin: "10% auto", width: '60%'}}>
         <Col>{aboutinfo.map((card)=><Imagecap card={card}/>)}</Col>
         <Col style={{textAlign: "center",margin: "2% auto"}}><h1>About us</h1>
         <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.

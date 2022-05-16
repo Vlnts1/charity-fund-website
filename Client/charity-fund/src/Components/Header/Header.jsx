@@ -3,7 +3,7 @@ import {Container, Nav, Navbar,NavDropdown } from 'react-bootstrap'
 import {Link} from "react-router-dom";
 import SocialFollow from "../Header/SocialFollow"
 import ExitToAppIcon from '@mui/icons-material/ExitToApp';
-
+import rainbow from '../../assets/images/rainbow (2).png'
 function Header(  {isLoggedIn, setIsLoggedIn, userName, setIsAdmin } ) {
 
   const handleLogOut = () => {
@@ -16,8 +16,8 @@ function Header(  {isLoggedIn, setIsLoggedIn, userName, setIsAdmin } ) {
   return (
     <div className="App">
       <Navbar bg="light" expand="lg" fixed="top">
-          <Container fluid>
-            <Navbar.Brand href="#">Navbar scroll</Navbar.Brand>
+          <Container fluid style={{width: "90%"}}>
+            <Navbar.Brand href="#"><img src={rainbow}></img></Navbar.Brand>
             <Navbar.Toggle aria-controls="navbarScroll" />
             <Navbar.Collapse id="navbarScroll">
                 <Nav

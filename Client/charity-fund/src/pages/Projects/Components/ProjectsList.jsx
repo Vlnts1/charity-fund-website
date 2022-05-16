@@ -7,7 +7,7 @@ function Projectslist ({projects}) {
     return(
         <>      
 
-            <CardGroup style={{margin: "5% auto"}}>
+            <CardGroup>
                 {projects.map((project )=>
                 <Project project={project} key={project.id}/>)}
             </CardGroup>
