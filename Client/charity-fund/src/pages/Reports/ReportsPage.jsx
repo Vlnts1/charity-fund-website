@@ -9,14 +9,14 @@ const [isVisible, setIsVisible] = useState(false);
 
 
   return (
-    <Spring
-    from={{ opacity: 0, transform: 'translateY(-4rem)'}}
-    to={[
-      { opacity: 1, transform: 'translateY(0rem)' },
-    ]}
-    reverse={isVisible}>
-    {styles => (
-      <animated.div style={styles}>
+    // <Spring
+    // from={{ opacity: 0, transform: 'translateY(-4rem)'}}
+    // to={[
+    //   { opacity: 1, transform: 'translateY(0rem)' },
+    // ]}
+    // reverse={isVisible}>
+    // {styles => (
+    //   <animated.div style={styles}>
       <div style={{textAlign: 'center', margin: "10% auto"}}>
       <h1> Звіти </h1>
         <Container style={{margin: "2% auto", width: "59%"}}>
@@ -49,9 +49,9 @@ const [isVisible, setIsVisible] = useState(false);
             </Row>
         </Container>
       </div>
-      </animated.div>
-    )}
-    </Spring>
+    //   </animated.div>
+    // )}
+    // </Spring>
   );
 }
 

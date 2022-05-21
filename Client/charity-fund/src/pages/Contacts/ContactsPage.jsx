@@ -12,23 +12,23 @@ function ContactsPage() {
 const [isVisible, setIsVisible] = useState(false);
 
   return (
-    <Spring
-    from={{ opacity: 0, transform: 'translateY(-4rem)'}}
-    to={[
-      { opacity: 1, transform: 'translateY(0rem)' },
-    ]}
-    reverse={isVisible}>
-    {styles => (
-      <animated.div style={styles}>
+    // <Spring
+    // from={{ opacity: 0, transform: 'translateY(-4rem)'}}
+    // to={[
+    //   { opacity: 1, transform: 'translateY(0rem)' },
+    // ]}
+    // reverse={isVisible}>
+    // {styles => (
+    //   <animated.div style={styles}>
 
       <Container style={{margin: "20% auto", width: '60%'}}>
       {contacts.map((card )=>
       <Textcard card={card} key={card.id}/>)}
       </Container>
 
-      </animated.div>
-        )}
-        </Spring>
+      // </animated.div>
+      //   )}
+      //   </Spring>
   );
 }
 

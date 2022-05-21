@@ -1,0 +1,16 @@
+.twitter-embed {
+   margin: 7vmin auto;
+  padding: 3vmin;
+  width: 70%;
+  height: 60%;
+
+    
+}
+
+@keyframes 
+show-twitter-embed {  from {
+opacity: 0;
+}
+to { opacity: 1; }
+}
+

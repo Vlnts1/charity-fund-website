@@ -16,14 +16,14 @@ function AboutPage() {
 
 
   return (
-    <Spring
-    from={{ opacity: 0, transform: 'translateY(-4rem)'}}
-    to={[
-      { opacity: 1, transform: 'translateY(0rem)' },
-    ]}
-    reverse={isVisible}>
-    {styles => (
-      <animated.div style={styles}>
+    // <Spring
+    // from={{ opacity: 0, transform: 'translateY(-4rem)'}}
+    // to={[
+    //   { opacity: 1, transform: 'translateY(0rem)' },
+    // ]}
+    // reverse={isVisible}>
+    // {styles => (
+    //   <animated.div style={styles}>
     <Container style={{margin: "10% auto", width: '60%'}}>
         <Col>{aboutinfo.map((card)=><Imagecap card={card}/>)}</Col>
         <Col style={{textAlign: "center",margin: "2% auto"}}><h1>About us</h1>
@@ -36,9 +36,9 @@ function AboutPage() {
           Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
         </p></Col>
     </Container>
-    </animated.div>
-    )}
-    </Spring>
+    // </animated.div>
+    // )}
+    // </Spring>
     
   );
 }

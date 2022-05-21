@@ -10,17 +10,18 @@ function Homepage() {
   const [isVisible, setIsVisible] = useState(false);
 
   return (
-    <Spring
-    from={{ opacity: 0, transform: 'translateY(-4rem)'}}
-    to={[
-      { opacity: 1, transform: 'translateY(0rem)' },
-    ]}
-    reverse={isVisible}>
-    {styles => (
-    <animated.div style={styles}>
-      <Carouselmain/>
+    // <Spring
+    // from={{ opacity: 0, transform: 'translateY(-4rem)'}}
+    // to={[
+    //   { opacity: 1, transform: 'translateY(0rem)' },
+    // ]}
+    // reverse={isVisible}>
+    // {styles => (
+    // <animated.div style={styles}>
       
       <div>
+              <Carouselmain/>
+
         <h1 style={{textAlign: "center", margin: "5% auto"}}>Nazva</h1>
         <p style={{width: "80%", margin: "5% auto"}}>
         Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне.
@@ -32,13 +33,13 @@ function Homepage() {
 
         </p>  
         
-      </div>
+     
       <Col style={{margin: '40px',textAlign: "center"}}><ButtonPayload/></Col>
       <Cards/>
-
-    </animated.div>
-     )}
-     </Spring>
+      </div>
+    // </animated.div>
+    //  )}
+    //  </Spring>
   );
 }
 

@@ -17,25 +17,25 @@ const [isVisible, setIsVisible] = useState(false);
 
 
   return (
-    <Spring
-    from={{ opacity: 0, transform: 'translateY(-4rem)'}}
-    to={[
-      { opacity: 1, transform: 'translateY(0rem)' },
-    ]}
-    reverse={isVisible}>
-    {styles => (
+    // <Spring
+    // from={{ opacity: 0, transform: 'translateY(-4rem)'}}
+    // to={[
+    //   { opacity: 1, transform: 'translateY(0rem)' },
+    // ]}
+    // reverse={isVisible}>
+    // {styles => (
     <Container>
       <Row classname="mt-2">
         <Col>
-          <animated.div style={styles}>
+          {/* <animated.div style={styles}> */}
               <h1 style={{textAlign: "center", margin: "10% auto"}}> Проекти</h1>
               <Projectslist  projects={projects}/>
-          </animated.div>
+          {/* </animated.div> */}
         </Col>
       </Row>
     </Container>
-    )}
-    </Spring>
+    // )}
+    // </Spring>
   );
 }
 

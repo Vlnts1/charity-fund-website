@@ -41,7 +41,7 @@ function Header(  {isLoggedIn, setIsLoggedIn, userName, setIsAdmin } ) {
                     Адмін, <strong> {userName} </strong>
                     <Nav.Link onClick={handleLogOut} exact to="/login"> <ExitToAppIcon/> Logout</Nav.Link>
                     </nav>
-                  : 'dyxovnistnacii@gmail.com'
+                  : 'OCFCUkraine@gmail.com'
                 }
                 </span>
                 <span class="navbar-text">
