@@ -1,13 +1,9 @@
-import React, {useState} from 'react';
+import React from 'react';
 import "./Components/BlogContent.css"
-import CircularProgress from '@mui/material/CircularProgress';
 import TwitterContainer from "./Components/TwitterContainer"
 
 
  function BlogPage () {
-
-    const [isLoading, setIsLoading] = useState(true)
-      
 
         return(
             <div className='blogPage'>

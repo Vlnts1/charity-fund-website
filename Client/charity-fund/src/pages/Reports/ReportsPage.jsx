@@ -1,24 +1,14 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {Row, Card, Container} from 'react-bootstrap'
-import { Spring, animated } from 'react-spring'
 import  './ReportsPage.css';
 
 function ReportsPage() {
 
-const [isVisible, setIsVisible] = useState(false);
-
 
   return (
-    // <Spring
-    // from={{ opacity: 0, transform: 'translateY(-4rem)'}}
-    // to={[
-    //   { opacity: 1, transform: 'translateY(0rem)' },
-    // ]}
-    // reverse={isVisible}>
-    // {styles => (
-    //   <animated.div style={styles}>
+
       <div style={{textAlign: 'center', margin: "10% auto"}}>
-      <h1> Звіти </h1>
+      <h1 style={{textAlign: 'center', margin: "10% auto"}}> Звіти </h1>
         <Container style={{margin: "2% auto", width: "59%"}}>
             <Row>
                 <Card body style={{margin: "2% auto"}}>
@@ -49,9 +39,7 @@ const [isVisible, setIsVisible] = useState(false);
             </Row>
         </Container>
       </div>
-    //   </animated.div>
-    // )}
-    // </Spring>
+
   );
 }
 

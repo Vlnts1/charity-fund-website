@@ -12,6 +12,7 @@ const TwitterContainer = () => {
   const { isLoading } = useState();
 
   return (
+    
     <section className="twitterContainer">
       <div className="twitter-embed" >
       <h1 className="HeaderBlog" style={{margin: "8% auto"}}>Блог</h1> 
@@ -22,6 +23,8 @@ const TwitterContainer = () => {
           data-chrome="noheader nofooter noborders"
           href="https://twitter.com/fillpackart?s=21&t=d5wINaCBcLs6KEcNUclTfA"
         >
+          Tweets by @TwitterDev
+
           {isLoading && <CircularProgress className="preloader"/>}
         </a>
       </div>

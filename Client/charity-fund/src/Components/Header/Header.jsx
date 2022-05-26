@@ -2,22 +2,18 @@ import React from 'react';
 import {Container, Nav, Navbar,NavDropdown } from 'react-bootstrap'
 import {Link} from "react-router-dom";
 import SocialFollow from "../Header/SocialFollow"
-import ExitToAppIcon from '@mui/icons-material/ExitToApp';
 import rainbow from '../../assets/images/rainbow (2).png'
-function Header(  {isLoggedIn, setIsLoggedIn, userName, setIsAdmin } ) {
+import "./Header.css"
 
-  const handleLogOut = () => {
-    localStorage.removeItem('isLoggedIn', false)
-    localStorage.removeItem('userName')
-    setIsLoggedIn(false);
-    setIsAdmin(false);
-  };
+
+function Header() {
+
 
   return (
-    <div className="App">
+    <div className="Header">
       <Navbar bg="light" expand="lg" fixed="top">
           <Container fluid style={{width: "90%"}}>
-            <Navbar.Brand href="#"><img src={rainbow}></img></Navbar.Brand>
+            <Navbar.Brand href="#"><img src={rainbow} alt=""></img></Navbar.Brand>
             <Navbar.Toggle aria-controls="navbarScroll" />
             <Navbar.Collapse id="navbarScroll">
                 <Nav
@@ -35,14 +31,9 @@ function Header(  {isLoggedIn, setIsLoggedIn, userName, setIsAdmin } ) {
                   <Nav.Link as={Link} to={"/contacts"}>Контакти</Nav.Link>
                 </Nav>  
               <span class="text" style={{textAlign: "center"}}>
-                { 
-                  isLoggedIn ?
-                    <nav style={{textAlign: "center"}}>
-                    Адмін, <strong> {userName} </strong>
-                    <Nav.Link onClick={handleLogOut} exact to="/login"> <ExitToAppIcon/> Logout</Nav.Link>
-                    </nav>
-                  : 'OCFCUkraine@gmail.com'
-                }
+
+                  <a className="emailtext" href="mailto: OCFCUkraine@gmail.com">OCFCUkraine@gmail.com</a>
+
                 </span>
                 <span class="navbar-text">
                   <SocialFollow/>

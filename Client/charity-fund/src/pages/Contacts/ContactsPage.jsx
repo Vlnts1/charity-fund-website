@@ -1,35 +1,37 @@
-import React, { useState} from 'react';
-import { Spring, animated } from 'react-spring'
-import { Container, } from 'react-bootstrap';
-import Textcard from '../../Components/common/Textcard';
+import React from 'react';
+import { Container, Row, Col } from 'react-bootstrap';
+import PhoneIcon from '@mui/icons-material/Phone';
+import EmailIcon from '@mui/icons-material/Email';
+import "./ContactsPage.css";
+import SocialFollow from "../../Components/Header/SocialFollow"
 
 function ContactsPage() {
-  const contacts = [
-    { header: 'Контакти',
-     id: 1, title1: 'Електронна адреса', text1: '.....@gmail.com',
-     id: 2, title2: 'Контактні телефони', text2: '38067-(823)-26-32, 38067-(823)-26-32', }
-]
-const [isVisible, setIsVisible] = useState(false);
+
 
   return (
-    // <Spring
-    // from={{ opacity: 0, transform: 'translateY(-4rem)'}}
-    // to={[
-    //   { opacity: 1, transform: 'translateY(0rem)' },
-    // ]}
-    // reverse={isVisible}>
-    // {styles => (
-    //   <animated.div style={styles}>
 
-      <Container style={{margin: "20% auto", width: '60%'}}>
-      {contacts.map((card )=>
-      <Textcard card={card} key={card.id}/>)}
+      <Container className="infoblock" style={{margin: "12% auto", width: "60%"}}>
+        <Row>
+          <Col><h1 md={4}>Контакти</h1></Col>
+          <Col></Col>
+        </Row>
+        <Row style={{position: "flex"}}>
+        <Col style={{margin: "2% auto" }}>
+        <a className="infotext" href="tel:+38 (044) 390 33 33"><PhoneIcon style={{color:"#fcb900"}}/>&nbsp;+38 (044) 390 33 33</a>
+        <br></br>
+        <a className="infotext" href="mailto:OCFCUkraine@gmail.com"><EmailIcon style={{color:"#fcb900"}}/>&nbsp;OCFCUkraine@gmail.com</a>
+        <br></br>
+        <br></br>
+        <SocialFollow/>
+        </Col>
+        <Col></Col>
+
+        </Row>
       </Container>
 
-      // </animated.div>
-      //   )}
-      //   </Spring>
+
   );
+  
 }
 
 export default ContactsPage;

@@ -1,18 +1,18 @@
-import React, {useState} from 'react';
+import React from 'react';
 import Project from './Project';
-import { CardGroup} from 'react-bootstrap'
+import { Row} from 'react-bootstrap'
+import {projects} from '../../../data';
 
-function Projectslist ({projects}) {
+function Projectslist () {
     
-    return(
-        <>      
-
-            <CardGroup>
-                {projects.map((project )=>
-                <Project project={project} key={project.id}/>)}
-            </CardGroup>
-        </>
+    return(  
+        <Row className="flex">
+            {projects.map((project )=>
+            <Project project={project} key={project.id}/>)}
+        </Row>
     )
+
+    
 }
 
 export default Projectslist;
