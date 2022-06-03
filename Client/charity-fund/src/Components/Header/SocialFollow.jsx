@@ -14,7 +14,7 @@ function SocialFollow() {
         className="facebook social">
         <FontAwesomeIcon icon={faFacebook} size="2x" color="#1877F2" />
       </a>
-      <a href="https://www.twitter.com/jamesqquick" className="twitter social">
+      <a href="https://twitter.com/caritative_kiev?s=11&t=mulM3xBKVmQRYMV0ThbUUw" className="twitter social">
         <FontAwesomeIcon icon={faTwitter} size="2x" color="#1DA1F2"/>
       </a>
       <a href="https://www.instagram.com/learnbuildteach"

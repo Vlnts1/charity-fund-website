@@ -18,7 +18,7 @@ function ContactForm(){
         alert("Hey!: \n" + JSON.stringify(data) + "Here is ur data 😎")
     }
     return(
-        <Form id="contact-form" class="form" action="http://localhost:3000/contact" method="post">
+        <Form id="contact-form" className="form" >
         <Form.Group className="mb-3 form-group" controlId="formBasicEmail">
           <Form.Control type="text" ref={nameRef} placeholder="Ваше ім'я" required />
         </Form.Group>
