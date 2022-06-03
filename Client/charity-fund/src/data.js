@@ -24,3 +24,31 @@ export const projects = [
       text: 'Ми проводимо комплексні медіа-кампанії для підвищення обізнаності щодо проблем, з якими, стикається населення, яке постраждало внаслідок конфлікту під час з стабілізації та відновлення повної участі в суспільному житті України. Ми готуємо регулярні звіти про наші програми, а також статті, що стосуються питань ВПО.'
     },
   ];
+
+  export const articles = [
+    {
+      id: 1,
+      file: 'https://images.pexels.com/photos/2787267/pexels-photo-2787267.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500', 
+      title: 'zvit 1', 
+    },
+    {
+      id: 2,
+      file: 'https://images.pexels.com/photos/2787267/pexels-photo-2787267.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500', 
+      title: 'zvit 2', 
+    },
+    {
+      id: 3,
+      file: 'https://images.pexels.com/photos/2787267/pexels-photo-2787267.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500', 
+      title: 'zvit 3', 
+    },
+    {
+      id: 4,
+      file: 'https://images.pexels.com/photos/2787267/pexels-photo-2787267.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500', 
+      title: 'zvit 4', 
+    },
+    {
+      id: 5,
+      file: 'https://images.pexels.com/photos/2787267/pexels-photo-2787267.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500', 
+      title: 'zvit 5', 
+    },
+  ];

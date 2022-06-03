@@ -11,6 +11,8 @@ import ContactsPage from '../../pages/Contacts/ContactsPage';
 import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
 import SingleProjectPage from '../../pages/Projects/SingleProjectPage';
+import {projects} from '../../data';
+import {articles} from '../../data';
 
 function Navigation () {
     return (
@@ -21,11 +23,11 @@ function Navigation () {
                 <Route exact path='/' element={<Homepage/>} />
                 <Route  path='/about' element={<AboutPage/>} />
   
-                <Route  path='/project/:id' element={<SingleProjectPage/>} />
-                <Route  path='/projects' element={<ProjectsPage/>} />
+                <Route  path='/projects/:id' element={<SingleProjectPage projects={projects} />} />
+                <Route  path='/projects' element={<ProjectsPage projects={projects}/>} />
   
                 <Route  path='/blog' element={<BlogPage/>} />
-                <Route  path='/reports' element={<ReportsPage/>} />
+                <Route  path='/reports' element={<ReportsPage articles={articles}/>} />
                 <Route  path='/contacts' element={<ContactsPage/>} />
                 
               </Routes>

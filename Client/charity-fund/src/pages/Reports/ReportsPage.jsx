@@ -1,45 +1,39 @@
-import React from 'react';
+import React, {useState,useEffect} from 'react';
 import {Row, Card, Container} from 'react-bootstrap'
 import  './ReportsPage.css';
+import CircularProgress from '@mui/material/CircularProgress';
 
-function ReportsPage() {
+function ReportsPage({articles}) {
+    const [isLoading, setLoading] = useState(false);
 
+    useEffect(() => {
+      setLoading(true);
+      setTimeout(() => {
+        setLoading(false);
+      }, 1500)
+    }, [])
 
   return (
 
-      <div style={{textAlign: 'center', margin: "10% auto"}}>
-      <h1 style={{textAlign: 'center', margin: "10% auto"}}> Звіти </h1>
-        <Container style={{margin: "2% auto", width: "59%"}}>
-            <Row>
-                <Card body style={{margin: "2% auto"}}>
-                    <div style={{display: "flex"}}>
-                    <h5><a href="url" download>Звіт 1</a></h5>
-                    </div>
-                </Card>
-                <Card body style={{margin: "2% auto"}}>
-                    <div style={{display: "flex"}}>
-                        <h5><a href="url" download>Звіт 2</a></h5>
-                    </div>
-                </Card>
-                <Card body style={{margin: "2% auto"}}>
-                    <div style={{display: "flex"}}>
-                    <h5><a href="url" download>Звіт 3</a></h5>
-                    </div>
-                </Card>
-                <Card body style={{margin: "2% auto"}}>
-                    <div style={{display: "flex"}}>
-                    <h5><a href="url" download>Звіт 4</a></h5>
-                    </div>
-                </Card>
-                <Card body style={{margin: "2% auto"}}>
-                    <div style={{display: "flex"}}>
-                    <h5><a href="url" download>Звіт 5</a></h5>
-                    </div>
-                </Card>
-            </Row>
-        </Container>
-      </div>
-
+    <div className="Articles">
+        {isLoading? (
+        <CircularProgress isLoading={isLoading}
+        style={{position: 'fixed',top: '50%',left: '50%'}}/>
+        ) : (
+            <Container style={{margin: "5% auto", width: "60%"}}>
+                <Row>
+                    <h1 style={{textAlign: 'center', margin: "5% auto"}}> Звіти </h1>
+                    {articles.map((article )=>
+                        <Card body style={{margin: "2% auto"}}>
+                            <div style={{display: "flex"}}>
+                            <h5><a href={article.file} download>{article.title}</a></h5>
+                            </div>
+                        </Card>
+                    )}
+                </Row>
+            </Container>
+        )}
+    </div>
   );
 }
 

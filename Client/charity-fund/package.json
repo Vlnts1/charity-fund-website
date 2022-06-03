@@ -23,11 +23,8 @@
     "react-router-dom": "^6.3.0",
     "react-scripts": "^5.0.1",
     "react-show-more-text": "^1.5.2",
-    "react-tweet-embed": "^2.0.0",
     "react-twitter-embed": "^4.0.4",
     "read-more-more": "^2.0.2",
-    "redux-devtools-extension": "^2.13.9",
-    "redux-thunk": "^2.4.1",
     "styled-components": "^5.3.5",
     "web-vitals": "^2.1.4"
   },

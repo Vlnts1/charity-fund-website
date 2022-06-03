@@ -1,12 +1,5 @@
-.postControl {
+.projectcard {
     display: flex;
-    align-items: center;
-    margin: auto;
-}
-.editbtn {
-    margin: 5px;
-}
-
-.deletebtn {
-    text-align: left;
+    margin: 5% auto;
+    width: 80px;
 }

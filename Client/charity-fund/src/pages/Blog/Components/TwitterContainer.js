@@ -1,5 +1,4 @@
-import React, { useEffect,useState } from "react";
-import CircularProgress from '@mui/material/CircularProgress';
+import React, { useEffect } from "react";
 import "./TwitterContainer.css"
 
 const TwitterContainer = () => {
@@ -9,7 +8,6 @@ const TwitterContainer = () => {
     document.getElementsByClassName("twitter-embed")[0].appendChild(script);
   }, []);
 
-  const { isLoading } = useState();
 
   return (
     
@@ -21,11 +19,8 @@ const TwitterContainer = () => {
           data-theme="light"
           data-tweet-limit="5"
           data-chrome="noheader nofooter noborders"
-          href="https://twitter.com/fillpackart?s=21&t=d5wINaCBcLs6KEcNUclTfA"
+          href="https://twitter.com/caritative_kiev?s=11&t=mulM3xBKVmQRYMV0ThbUUw"
         >
-          Tweets by @TwitterDev
-
-          {isLoading && <CircularProgress className="preloader"/>}
         </a>
       </div>
     </section>

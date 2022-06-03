@@ -13,7 +13,7 @@ function Header() {
     <div className="Header">
       <Navbar bg="light" expand="lg" fixed="top">
           <Container fluid style={{width: "90%"}}>
-            <Navbar.Brand href="#"><img src={rainbow} alt=""></img></Navbar.Brand>
+            <Navbar.Brand as={Link} to={"/"}><img src={rainbow} alt=""></img></Navbar.Brand>
             <Navbar.Toggle aria-controls="navbarScroll" />
             <Navbar.Collapse id="navbarScroll">
                 <Nav

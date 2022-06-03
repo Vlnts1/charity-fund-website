@@ -1,23 +1,38 @@
-import React, {useState} from 'react';
+import React, {useState,useEffect} from 'react';
 import Projectslist from './Components/ProjectsList'
-import {Container, Row, Col} from 'react-bootstrap'
+import {Container, Col} from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import CircularProgress from '@mui/material/CircularProgress';
+import "./Components/Project.css"
 
 
-function ProjectsPage() {
+function ProjectsPage({projects}) {
+  const [isLoading, setLoading] = useState(false);
+
+  useEffect(() => {
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+    }, 1000)
+  },[])
 
 
   return (
-
-    <Container>
-      <Row classname="mt-2">
-        <Col>
-              <h1 style={{textAlign: "center", margin: "12% auto"}}> Проекти</h1>
-              <Projectslist/>
-
-        </Col>
-      </Row>
-    </Container>
+    <div className="Projects">
+      {isLoading? (
+        <CircularProgress isLoading={isLoading}
+        style={{position: 'fixed',top: '50%',left: '50%'}}/>
+        ) : (
+        <Container style={{margin: "12% auto"}}> 
+          <Col> 
+            <h1 style={{textAlign: "center",margin: "5% auto"}}> Проекти</h1>
+          </Col>
+          <Col>
+            <Projectslist projects={projects}/>
+          </Col>
+        </Container>
+      )}
+    </div>
   );
 }
 
