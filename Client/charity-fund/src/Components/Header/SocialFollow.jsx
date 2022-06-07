@@ -17,10 +17,10 @@ function SocialFollow() {
       <a href="https://twitter.com/caritative_kiev?s=11&t=mulM3xBKVmQRYMV0ThbUUw" className="twitter social">
         <FontAwesomeIcon icon={faTwitter} size="2x" color="#1DA1F2"/>
       </a>
-      <a href="https://www.instagram.com/learnbuildteach"
+      {/* <a href=""
         className="instagram social">
         <FontAwesomeIcon icon={faInstagram} size="2x" color="#E4405F"/>
-      </a>
+      </a> */}
     </div>
   );
 }

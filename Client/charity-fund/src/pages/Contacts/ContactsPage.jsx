@@ -28,7 +28,6 @@ function ContactsPage() {
                 <Col>
                   <h1 md={4}>Контакти</h1>
                 </Col>
-                <Col></Col>
               </Row>
               <Row style={{position: "flex"}}>
                 <Col style={{margin: "2% auto" }}>

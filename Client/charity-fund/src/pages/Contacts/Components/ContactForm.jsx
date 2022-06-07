@@ -1,21 +1,31 @@
 import React, { useRef }  from "react";
 import {Form, Button, FloatingLabel} from 'react-bootstrap';
-import './ContactForm.css'
-
+// import './ContactForm.css'
+import Axios from 'axios';
 
 function ContactForm(){
     const nameRef = useRef(null)
     const emailRef = useRef(null)
     const messageRef =  useRef(null)
+    
     const handleSubmit = (event) => {
         event.preventDefault()
-    
-        const data = {
+        
+        let data = {
               name: nameRef.current.value,
               email: emailRef.current.value,
               message: messageRef.current.value
               }
-        alert("Hey!: \n" + JSON.stringify(data) + "Here is ur data 😎")
+              Axios.post(`https://api.telegram.org/bot5437138113:AAFTFQEUaYHjPIFcXtKZCVEjUHaLZfp4Uro/sendMessage`,{ 
+              chat_id: 286615140,
+              parse_mode: 'html',
+              text: data})
+              .then(function (response) {
+                console.log(response);
+              })
+              .catch(function (error) {
+                console.log(error);
+              }); 
     }
     return(
         <Form id="contact-form" className="form" >
@@ -33,7 +43,7 @@ function ContactForm(){
             style={{ height: '100px' }}/>
         </FloatingLabel>
       
-        <Button className="btn btn-mod btn-border btn-large" variant="primary" type="submit" 
+        <Button className="btn btn-mod btn-border btn-large" variant="outline-dark" type="submit" 
             style={{display: "block",margin: "auto"}}
             onClick={(handleSubmit)}>
           Відправити

@@ -1,5 +1,5 @@
 import React, {useState,useEffect} from 'react';
-import {Row, Card, Container} from 'react-bootstrap'
+import {Row, Col, Card, Container} from 'react-bootstrap'
 import  './ReportsPage.css';
 import CircularProgress from '@mui/material/CircularProgress';
 
@@ -22,14 +22,16 @@ function ReportsPage({articles}) {
         ) : (
             <Container style={{margin: "5% auto", width: "60%"}}>
                 <Row>
+                  <Col>
                     <h1 style={{textAlign: 'center', margin: "5% auto"}}> Звіти </h1>
-                    {articles.map((article )=>
-                        <Card body style={{margin: "2% auto"}}>
-                            <div style={{display: "flex"}}>
-                            <h5><a href={article.file} download>{article.title}</a></h5>
-                            </div>
-                        </Card>
-                    )}
+                      {articles.map((article )=>
+                          <Card body style={{margin: "2% auto"}}>
+                              <div style={{display: "flex"}}>
+                              <h5><a href={article.file} download>{article.title}</a></h5>
+                              </div>
+                          </Card>
+                      )}
+                  </Col>
                 </Row>
             </Container>
         )}

@@ -23,7 +23,7 @@ function Header() {
                 >
                   <Nav.Link as={Link} to={"/"}>Головна</Nav.Link>
                   <Nav.Link as={Link} to={"/about"}>Про нас</Nav.Link>
-                  <Nav.Link as={Link} to={"/projects"}>Проекти</Nav.Link>
+                  {/* <Nav.Link as={Link} to={"/projects"}>Проекти</Nav.Link> */}
                   <NavDropdown title="Новини" id="navbarScrollingDropdown">
                     <NavDropdown.Item as={Link} to={"/blog"}>Блог</NavDropdown.Item>
                     <NavDropdown.Item as={Link} to={"/reports"}>Звіти</NavDropdown.Item>

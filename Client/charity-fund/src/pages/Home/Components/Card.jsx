@@ -4,7 +4,7 @@ import "./Card.css"
 
 function Card(props) {
   return (
-    <div class="card" style={{margin: '16px',textAlign: "center"}}>
+    <div class="card" style={{margin: '16px',width: '18rem', textAlign: "center"}}>
   <img src={props.card.img} class="card-img-top"  alt=""/>
   <div class="card-body">
     <h5 class="card-title" style={{textAlign: "center"}}>{props.card.title}</h5>

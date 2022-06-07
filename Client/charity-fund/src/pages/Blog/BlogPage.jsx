@@ -2,6 +2,7 @@ import React, {useState,useEffect} from 'react';
 import "./Components/BlogContent.css"
 import TwitterContainer from "./Components/TwitterContainer"
 import CircularProgress from '@mui/material/CircularProgress';
+import { Container, Row, Col } from 'react-bootstrap';
 
 
  function BlogPage () {
@@ -19,7 +20,13 @@ import CircularProgress from '@mui/material/CircularProgress';
                         <CircularProgress isLoading={isLoading}
                         style={{position: 'fixed',top: '50%',left: '50%'}}/>
                         ) : (
-                        <TwitterContainer/>
+                            <Container>
+                                <Row>
+                                    <Col>
+                                        <TwitterContainer/>
+                                    </Col>
+                                </Row>
+                            </Container>
                     )}
                 </div>
             );
