@@ -16,8 +16,8 @@ function ContactForm(){
               email: emailRef.current.value,
               message: messageRef.current.value
               }
-              Axios.post(`https://api.telegram.org/bot5437138113:AAFTFQEUaYHjPIFcXtKZCVEjUHaLZfp4Uro/sendMessage`,{ 
-              chat_id: 286615140,
+              Axios.post(`https://api.telegram.org/bot${process.env.REACT_APP_BOT_TOKEN}/sendMessage`,{ 
+              chat_id: process.env.REACT_APP_CHAT_ID,
               parse_mode: 'html',
               text: data})
               .then(function (response) {
