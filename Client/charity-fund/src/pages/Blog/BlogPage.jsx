@@ -16,18 +16,20 @@ import { Container, Row, Col } from 'react-bootstrap';
         }, [])
             return(
                 <div className='blogPage'> 
-                    {isLoading? (
-                        <CircularProgress isLoading={isLoading}
-                        style={{position: 'fixed',top: '50%',left: '50%'}}/>
-                        ) : (
-                            <Container>
-                                <Row>
-                                    <Col>
-                                        <TwitterContainer/>
-                                    </Col>
-                                </Row>
-                            </Container>
-                    )}
+                    <div className="animate">
+                        {isLoading? (
+                                <CircularProgress isLoading={isLoading}
+                                style={{position: 'fixed',top: '50%',left: '50%'}}/>
+                                ) : (
+                                    <Container>
+                                        <Row>
+                                            <Col>
+                                                <TwitterContainer/>
+                                            </Col>
+                                        </Row>
+                                    </Container>
+                            )}
+                    </div>  
                 </div>
             );
     }

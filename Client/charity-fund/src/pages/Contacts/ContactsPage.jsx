@@ -23,10 +23,10 @@ function ContactsPage() {
           <CircularProgress isLoading={isLoading}
           style={{position: 'fixed',top: '50%',left: '50%'}}/>
           ) : (
-            <Container className="infoblock" style={{margin: "12% auto", width: "60%"}}>
+            <Container className="animate" style={{margin: "12% auto", width: "60%"}}>
               <Row>
                 <Col>
-                  <h1 md={4}>Контакти</h1>
+                  <h1 md={4} className="infoheader">Контакти</h1>
                 </Col>
               </Row>
               <Row style={{position: "flex"}}>

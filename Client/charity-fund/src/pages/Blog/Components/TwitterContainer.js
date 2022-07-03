@@ -13,13 +13,13 @@ const TwitterContainer = () => {
     
     <section className="twitterContainer">
       <div className="twitter-embed" >
-      <h1 className="HeaderBlog" style={{margin: "8% auto"}}>Блог</h1> 
+      <h1 className="HeaderBlog" style={{margin: "10% auto"}}>Блог</h1> 
         <a
           className="twitter-timeline"
           data-theme="light"
           data-tweet-limit="5"
           data-chrome="noheader nofooter noborders"
-          href="https://twitter.com/caritative_kiev?s=11&t=mulM3xBKVmQRYMV0ThbUUw"
+          href="https://twitter.com/PatrimoineKiev"
         >
         </a>
       </div>

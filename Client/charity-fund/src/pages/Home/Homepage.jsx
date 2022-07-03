@@ -1,10 +1,11 @@
 import React, {useEffect, useState} from 'react';
 import ButtonPayload  from './Components/Button';
-import { Container, Col,Row} from 'react-bootstrap';
-import Carouselmain from './Components/Carousel';
+import { Container, Col,Button,Row} from 'react-bootstrap';
 import Cards from './Components/Cards'
 import CircularProgress from '@mui/material/CircularProgress';
-import Paymentsinfoblock from './Components/Paymentsinfo';
+import fond from "../../assets/fond.jpeg"
+import helphand from "../../assets/helphand.jpeg"
+import "./Homepage.css"
 
 function Homepage() {
   const [isLoading, setLoading] = useState(false);
@@ -24,20 +25,33 @@ function Homepage() {
           <CircularProgress isLoading={isLoading}
           style={{position: 'fixed',top: '50%',left: '50%'}}/>
           ) : (
-            <Container>
-              <Col><Carouselmain/></Col>
-              <Col>
-                <h1 style={{textAlign: "center", margin: "2% auto"}}>Nazva</h1>
-                <p style={{width: "80%", margin: "5% auto"}}>
-                  Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне.
-                  Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный 
-                  печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов.
-                    Lorem Ipsum не только успешно пережил без заметных изменений пять веков, но и перешагнул в электронный дизайн.
-                </p>  
-                <Paymentsinfoblock/>
-              </Col>
-              <Col style={{margin: '40px',textAlign: "center"}}><ButtonPayload/></Col>
-              <Col><Cards/></Col>
+            <Container className="animate">
+              <Row className="mainsection">
+                <Col>
+                  <h1 className="mainheader">Благодійний Фонд</h1>
+                  <h2>"Духовність та здоров'я Нації" </h2>
+                  <h6 className="maintext">Наша мета робити життя людей здоровим і якісним</h6>
+                  <h6 className="maintext">Приєднуйтесь до нас!</h6>
+                  <ButtonPayload/>
+                </Col>
+                <Col>
+                  <img src={helphand} alt="main section photo" width="600" height="500"/>
+                </Col>
+              </Row>
+              <Row className="aboutsection">
+                <Col>
+                  <h1>ПРО БЛАГОДІЙНИЙ ФОНД</h1>
+                  <p>Благодійний Фонд "Духовність та здоров'я Нації" заснований у 2022 році за ініціативи ... В мирний час діяльність фонду спрямована на підтримку малозабезпечених, запобігання домашньому насильству та утвердження ґендерної рівності.</p>
+                  <p>Під час війни фонд діє задля захисту та надання допомоги цивільним і військовим українцям.</p>
+                  <Button href="/about">Детальніше</Button>
+                </Col>
+                <Col>
+                  <img src={fond} alt="about section photo" width="600" height="400"/>
+                </Col>
+              </Row>
+              <Row>
+                <Col><Cards/></Col>
+              </Row>            
             </Container>
           )}
     </div>

@@ -4,7 +4,7 @@ import { Carousel} from 'react-bootstrap'
 function Carouselmain() {
     return(
         <Carousel fade  style={{margin: "4% auto", width: '80%'}}>
-  <Carousel.Item>
+  {/* <Carousel.Item>
     <img
       className=" d-block w-100"
       src="https://images.pexels.com/photos/1269790/pexels-photo-1269790.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500?v=161316?text=First slide&bg=373940"
@@ -19,7 +19,7 @@ function Carouselmain() {
       alt=""    />
 
 
-  </Carousel.Item>
+  </Carousel.Item> */}
   <Carousel.Item>
     <img
       className="d-block w-100 "

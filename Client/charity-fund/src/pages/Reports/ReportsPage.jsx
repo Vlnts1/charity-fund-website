@@ -20,12 +20,14 @@ function ReportsPage({articles}) {
         <CircularProgress isLoading={isLoading}
         style={{position: 'fixed',top: '50%',left: '50%'}}/>
         ) : (
-            <Container style={{margin: "5% auto", width: "60%"}}>
-                <Row>
-                  <Col>
-                    <h1 style={{textAlign: 'center', margin: "5% auto"}}> Звіти </h1>
+            <Container className="Containerreports">
+              <Row className="animate">
+                <Col><h1 style={{textAlign: 'center', margin: "2% auto"}}> Звіти </h1></Col>
+              </Row>
+                <Row className="articlesblock">
+                  <Col className="animate">
                       {articles.map((article )=>
-                          <Card body style={{margin: "2% auto"}}>
+                          <Card body style={{margin: "2% auto", width: "80%"}}>
                               <div style={{display: "flex"}}>
                               <h5><a href={article.file} download>{article.title}</a></h5>
                               </div>
