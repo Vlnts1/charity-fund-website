@@ -1,11 +1,10 @@
 import React from 'react';
 
-
- function Footer({ year }) {
+function Footer({ year }) {
   return (
-    <div className='bg-light py-4 mt-4 text-center fixed-bottom'>
+    <div className="bg-light py-4 mt-4 text-center fixed-bottom">
       Благодійний Фонд "Духовність та здоров'я Нації" - {year}
-      </div>
+    </div>
   );
 }
 export default Footer;

@@ -1,15 +1,12 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Navigation from './Components/Router/Router'
+import Navigation from './Components/Router/Router';
 
 function App() {
-  
-
   return (
-
-      <div className="App">
-        <Navigation/>
-      </div>
+    <div className="App">
+      <Navigation />
+    </div>
   );
 }
 

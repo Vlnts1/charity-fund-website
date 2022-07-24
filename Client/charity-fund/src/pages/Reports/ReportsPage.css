@@ -1,23 +1,29 @@
-.Containerreports{
+.Containerreports {
   margin-top: 100px;
-
 }
 
-a, a:hover, a:focus, a:active {
-    text-decoration: none;
-    color: inherit;
+a,
+a:hover,
+a:focus,
+a:active {
+  text-decoration: none;
+  color: inherit;
 }
-.articlesblock{
-    margin: 0px 100px 90px 80px;
+.articlesblock {
+  margin: 0px 100px 90px 80px;
 }
 .animate {
-    animation-duration: 0.5s;
-    animation-name: animate-fade;
-    animation-delay: 0.5s;
-    animation-fill-mode: backwards;
+  animation-duration: 0.5s;
+  animation-name: animate-fade;
+  animation-delay: 0.5s;
+  animation-fill-mode: backwards;
+}
+
+@keyframes animate-fade {
+  0% {
+    opacity: 0;
   }
-  
-  @keyframes animate-fade {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
+  100% {
+    opacity: 1;
   }
+}
