@@ -1,33 +1,31 @@
-
-
 .mainsection {
-    margin: 170px 50px;
-
+  margin: 170px 50px;
 }
 
-
-.maintext{
-    padding: 20px 10px 0px;
+.maintext {
+  padding: 20px 10px 0px;
 }
 .aboutsection {
-    margin: 0px 50px;
-
+  margin: 0px 50px;
 }
 .animate {
-    animation-duration: 0.5s;
-    animation-name: animate-fade;
-    animation-delay: 0.5s;
-    animation-fill-mode: backwards;
+  animation-duration: 0.5s;
+  animation-name: animate-fade;
+  animation-delay: 0.5s;
+  animation-fill-mode: backwards;
+}
+
+@keyframes animate-fade {
+  0% {
+    opacity: 0;
   }
-  
-  @keyframes animate-fade {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
+  100% {
+    opacity: 1;
   }
+}
 @media only screen and (max-width: 768px) {
-    /* For mobile phones: */
-    [class*="Homepage"] {
-      width: 100%;
-    }
+  /* For mobile phones: */
+  [class*='Homepage'] {
+    width: 100%;
   }
-  
+}

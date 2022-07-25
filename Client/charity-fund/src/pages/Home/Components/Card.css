@@ -1,18 +1,24 @@
 .card {
-   box-shadow: 
-   5px 5px 30px 7px rgba(44, 44, 44, 0.25), 
-   -5px -5px 30px 7px rgba(44, 44, 44, 0.25);
-   cursor: pointer;
-   transition: 0.4s;
+  margin: 16px;
+  width: 18rem;
+  text-align: center;
+  box-shadow: 5px 5px 30px 7px rgba(44, 44, 44, 0.25), -5px -5px 30px 7px rgba(44, 44, 44, 0.25);
+  cursor: pointer;
+  transition: 0.4s;
+}
+.card-title{
+  text-align: center;
+}
+.card-text{
+  text-align: center;
 }
 .card:hover {
-   transform: scale(0.9, 0.9);
-   box-shadow: 5px 5px 30px 15px rgba(44, 44, 44, 0.25), 
-     -5px -5px 30px 15px rgba(44, 44, 44, 0.25);
- }
- @media all and (max-width: 500px) {
-   .card-list {
-     /* On small screens, we are no longer using row direction but column */
-     flex-direction: column;
-   }
- }
+  transform: scale(0.9, 0.9);
+  box-shadow: 5px 5px 30px 15px rgba(44, 44, 44, 0.25), -5px -5px 30px 15px rgba(44, 44, 44, 0.25);
+}
+@media all and (max-width: 500px) {
+  .card-list {
+    /* On small screens, we are no longer using row direction but column */
+    flex-direction: column;
+  }
+}

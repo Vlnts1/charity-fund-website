@@ -1,27 +1,49 @@
-.infoheader{
-    margin-top: 50px;
+.contactscontainer{
+  margin: 12% auto;
+  width: 60%;
+}
+.contactsrow{
+  position: flex;
+}
+.contactscol{
+  margin: 2% auto;
+}
+.phoneicon{
+color: #fcb900;
+}
+.emailicon{
+  color: #fcb900;
+}
+.socialaccs{
+  margin: 5% auto;
+}
+.infoheader {
+  margin-top: 50px;
 }
 .infotext {
-    display: inline-block;
-    -webkit-transition: text-shadow 0.2s linear;
-    -moz-transition: text-shadow 0.2s linear;
-    -ms-transition: text-shadow 0.2s linear;
-    -o-transition: text-shadow 0.2s linear;
-    transition: text-shadow 0.2s linear;
+  display: flex;
+  -webkit-transition: text-shadow 0.2s linear;
+  -moz-transition: text-shadow 0.2s linear;
+  -ms-transition: text-shadow 0.2s linear;
+  -o-transition: text-shadow 0.2s linear;
+  transition: text-shadow 0.2s linear;
 }
 .infotext:hover {
-    text-shadow: 0 0 10px yellow;
-
+  text-shadow: 0 0 10px yellow;
 }
 
 .animate {
-    animation-duration: 0.5s;
-    animation-name: animate-fade;
-    animation-delay: 0.5s;
-    animation-fill-mode: backwards;
+  animation-duration: 0.5s;
+  animation-name: animate-fade;
+  animation-delay: 0.5s;
+  animation-fill-mode: backwards;
+}
+
+@keyframes animate-fade {
+  0% {
+    opacity: 0;
   }
-  
-  @keyframes animate-fade {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
+  100% {
+    opacity: 1;
   }
+}

@@ -1,11 +1,13 @@
+.text{
+  text-align: center;
+}
 .emailtext {
-    -webkit-transition: text-shadow 0.2s linear;
-    -moz-transition: text-shadow 0.2s linear;
-    -ms-transition: text-shadow 0.2s linear;
-    -o-transition: text-shadow 0.2s linear;
-    transition: text-shadow 0.2s linear;
+  -webkit-transition: text-shadow 0.2s linear;
+  -moz-transition: text-shadow 0.2s linear;
+  -ms-transition: text-shadow 0.2s linear;
+  -o-transition: text-shadow 0.2s linear;
+  transition: text-shadow 0.2s linear;
 }
 .emailtext:hover {
-    text-shadow: 0 0 10px yellow;
-
+  text-shadow: 0 0 10px yellow;
 }

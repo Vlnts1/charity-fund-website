@@ -1,49 +1,53 @@
-.containerabout{
-    margin: 14% auto;
-    width: 70%;
+.containerabout {
+  margin: 14% auto;
+  width: 70%;
 }
-.aboutfond{
-    padding: 50px 50px 75px 10px;
+.aboutfond {
+  padding: 50px 50px 75px 10px;
 }
-.mission{
-    background-color: rgb(250, 250, 250);
-    margin: 2% auto;
-}
-
-.missiontext{
-    text-align: center;
+.mission {
+  background-color: rgb(250, 250, 250);
+  margin: 2% auto;
 }
 
-.scope{
-    margin: 5% auto;
-}
-.scopestext{
-    text-align: center;
-    margin: 2% auto;
+.missiontext {
+  text-align: center;
 }
 
-.aboutinfo{
-    background-color: rgb(250, 250, 250);
-    margin: 5% auto;
-    text-align: center;
+.scope {
+  margin: 5% auto;
 }
-.aboutarticles{
-    margin: 5% auto;
+.scopestext {
+  text-align: center;
+  margin: 2% auto;
+}
+
+.aboutinfo {
+  background-color: rgb(250, 250, 250);
+  margin: 5% auto;
+  text-align: center;
+}
+.aboutarticles {
+  margin: 5% auto;
 }
 .animate {
-    animation-duration: 0.5s;
-    animation-name: animate-fade;
-    animation-delay: 0.5s;
-    animation-fill-mode: backwards;
+  animation-duration: 0.5s;
+  animation-name: animate-fade;
+  animation-delay: 0.5s;
+  animation-fill-mode: backwards;
+}
+
+@keyframes animate-fade {
+  0% {
+    opacity: 0;
   }
-  
-  @keyframes animate-fade {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
+  100% {
+    opacity: 1;
   }
+}
 @media only screen and (max-width: 768px) {
-    /* For mobile phones: */
-    [class*="col-"] {
-      width: 100%;
-    }
+  /* For mobile phones: */
+  [class*='col-'] {
+    width: 100%;
   }
+}
