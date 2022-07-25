@@ -1,8 +1,27 @@
+.contactscontainer{
+  margin: 12% auto;
+  width: 60%;
+}
+.contactsrow{
+  position: flex;
+}
+.contactscol{
+  margin: 2% auto;
+}
+.phoneicon{
+color: #fcb900;
+}
+.emailicon{
+  color: #fcb900;
+}
+.socialaccs{
+  margin: 5% auto;
+}
 .infoheader {
   margin-top: 50px;
 }
 .infotext {
-  display: inline-block;
+  display: flex;
   -webkit-transition: text-shadow 0.2s linear;
   -moz-transition: text-shadow 0.2s linear;
   -ms-transition: text-shadow 0.2s linear;

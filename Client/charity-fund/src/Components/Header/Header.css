@@ -1,3 +1,6 @@
+.text{
+  text-align: center;
+}
 .emailtext {
   -webkit-transition: text-shadow 0.2s linear;
   -moz-transition: text-shadow 0.2s linear;

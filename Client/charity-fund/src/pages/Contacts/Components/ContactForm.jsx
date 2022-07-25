@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { Form, Button, FloatingLabel } from 'react-bootstrap';
-// import './ContactForm.css'
+import './ContactForm.css'
 import Axios from 'axios';
 
 function ContactForm() {
@@ -11,7 +11,7 @@ function ContactForm() {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    let data = {
+    const data = {
       name: nameRef.current.value,
       email: emailRef.current.value,
       message: messageRef.current.value,
@@ -21,12 +21,7 @@ function ContactForm() {
       parse_mode: 'html',
       text: data,
     })
-      .then(function (response) {
-        console.log(response);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
+     
   };
   return (
     <Form id="contact-form" className="form">
@@ -43,15 +38,14 @@ function ContactForm() {
           as="textarea"
           ref={messageRef}
           placeholder="Введіть текст повідомлення"
-          style={{ height: '100px' }}
+          className="formcontrol"
         />
       </FloatingLabel>
 
       <Button
-        className="btn btn-mod btn-border btn-large"
+        className="btn btn-mod btn-border btn-large contactform-btn"
         variant="outline-dark"
         type="submit"
-        style={{ display: 'block', margin: 'auto' }}
         onClick={handleSubmit}
       >
         Відправити

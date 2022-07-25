@@ -1,13 +1,23 @@
 .Containerreports {
   margin-top: 100px;
 }
-
+.articlecard{
+  margin: 2% auto;
+  width: 80%;
+}
+.carddiv{
+  display: flex;
+}
 a,
 a:hover,
 a:focus,
 a:active {
   text-decoration: none;
   color: inherit;
+}
+.article-header{
+  text-align: center;
+  margin: 2% auto;
 }
 .articlesblock {
   margin: 0px 100px 90px 80px;
