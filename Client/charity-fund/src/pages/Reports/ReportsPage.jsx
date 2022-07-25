@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Row, Col, Card, Container } from 'react-bootstrap';
 import './ReportsPage.css';
-import CircularProgress from '@mui/material/CircularProgress';
+import PropTypes from 'prop-types';
+import {Loader} from '../../Components/common/loader';
 
 function ReportsPage({ articles }) {
+         /* eslint-disable import/prefer-default-export */
   const [isLoading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -16,22 +18,21 @@ function ReportsPage({ articles }) {
   return (
     <div className="Articles">
       {isLoading ? (
-        <CircularProgress
-          isLoading={isLoading}
-          style={{ position: 'fixed', top: '50%', left: '50%' }}
-        />
+         <Loader
+         isLoading={isLoading}
+       />
       ) : (
         <Container className="Containerreports">
           <Row className="animate">
             <Col>
-              <h1 style={{ textAlign: 'center', margin: '2% auto' }}> Звіти </h1>
+              <h1 className="article-header"> Звіти </h1>
             </Col>
           </Row>
           <Row className="articlesblock">
             <Col className="animate">
               {articles.map((article) => (
-                <Card body style={{ margin: '2% auto', width: '80%' }}>
-                  <div style={{ display: 'flex' }}>
+                <Card body className="articlecard">
+                  <div className="carddiv">
                     <h5>
                       <a href={article.file} download>
                         {article.title}
@@ -47,5 +48,9 @@ function ReportsPage({ articles }) {
     </div>
   );
 }
+ReportsPage.PropTypes.shape({
+  file: PropTypes.string,
+  title: PropTypes.string
+})
 
-export default ReportsPage;
+export  {ReportsPage};

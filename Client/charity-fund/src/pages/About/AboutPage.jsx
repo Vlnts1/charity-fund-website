@@ -1,19 +1,21 @@
 import React, { useState, useEffect } from 'react';
-import { Container, Row, Col, Button } from 'react-bootstrap';
-import CircularProgress from '@mui/material/CircularProgress';
 import { useNavigate } from 'react-router';
+import { Container, Row, Col, Button } from 'react-bootstrap';
 import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
-import team from '../../assets/team.png';
 import './AboutPage.css';
+import {Loader} from '../../Components/common/loader';
+import team from '../../assets/team.png';
 
 function AboutPage() {
+    /* eslint-disable import/prefer-default-export */
   const [isLoading, setLoading] = useState(false);
-  let navigate = useNavigate();
+  const navigate = useNavigate();
 
-  function handleClick() {
-    navigate('/reports');
+  const handleClick = (e) => {
+    e.preventDefault();
+    navigate('/reports')
   }
-
+  
   useEffect(() => {
     setLoading(true);
     setTimeout(() => {
@@ -21,29 +23,29 @@ function AboutPage() {
     }, 1000);
   }, []);
   return (
+
     <div className="AboutPage">
       {isLoading ? (
-        <CircularProgress
+        <Loader
           isLoading={isLoading}
-          style={{ position: 'fixed', top: '50%', left: '50%' }}
         />
       ) : (
         <Container className="containerabout">
           <Row>
             <Col className="animate">
               <h2>
-                Всеукраїнський благодійний фонд "Духовність та здоров'я Нації"
+                {`"Благодійний фонд Духовність та здоров'я Нації"`}
                 <br />
-                працює в сфері охорони здоров'я і соціального захисту
+                {`працює в сфері охорони здоров'я і соціального захисту`}
               </h2>
             </Col>
           </Row>
           <Row>
             <Col className="animate">
               <p className="aboutfond">
-                Фонд "Духовність та здоров'я Нації" заснований у 2022 році. Ми невелика команда
+                {`Фонд  заснований у 2022 році. Ми невелика команда
                 професіоналів і велике коло благодійників й волонтерів, об’єднаних спільними
-                цінностями, бажанням втілювати ефективні соціальні проекти
+                цінностями, бажанням втілювати ефективні соціальні проекти`}
               </p>
             </Col>
             <Col>
@@ -66,7 +68,7 @@ function AboutPage() {
           </Row>
           <Row className="aboutarticles">
             <Col sm={10}>
-              <h3 style={{ textAlign: 'center' }}>Наші звіти та установчі документи</h3>
+              <h3 className="aboutheader">Наші звіти та установчі документи</h3>
             </Col>
             <Col sm={2}>
               <Button onClick={handleClick}>
@@ -77,7 +79,9 @@ function AboutPage() {
         </Container>
       )}
     </div>
+    
   );
 }
 
-export default AboutPage;
+export {AboutPage};
+

@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import './Components/BlogContent.css';
-import TwitterContainer from './Components/TwitterContainer';
-import CircularProgress from '@mui/material/CircularProgress';
 import { Container, Row, Col } from 'react-bootstrap';
+import {Loader} from '../../Components/common/loader';
+import TwitterContainer from './Components/TwitterContainer';
 
 function BlogPage() {
+         /* eslint-disable import/prefer-default-export */
   const [isLoading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -16,12 +17,11 @@ function BlogPage() {
   return (
     <div className="blogPage">
       <div className="animate">
-        {isLoading ? (
-          <CircularProgress
-            isLoading={isLoading}
-            style={{ position: 'fixed', top: '50%', left: '50%' }}
-          />
-        ) : (
+      {isLoading ? (
+        <Loader
+          isLoading={isLoading}
+        />
+      ) : (
           <Container>
             <Row>
               <Col>
@@ -35,4 +35,4 @@ function BlogPage() {
   );
 }
 
-export default BlogPage;
+export  {BlogPage};

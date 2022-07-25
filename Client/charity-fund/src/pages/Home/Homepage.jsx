@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import ButtonPayload from './Components/Button';
 import { Container, Col, Row } from 'react-bootstrap';
-import Cards from './Components/Cards';
-import CircularProgress from '@mui/material/CircularProgress';
-import helphand from '../../assets/helphand.jpeg';
 import './Homepage.css';
+import {ButtonPayload} from './Components/Button';
+import {Cards} from './Components/Cards';
+import {Loader} from '../../Components/common/loader';
+import helphand from '../../assets/helphand.jpeg';
 
-function Homepage() {
+function Homepage({cards}) {
+      /* eslint-disable import/prefer-default-export */
   const [isLoading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -19,27 +20,24 @@ function Homepage() {
   return (
     <div className="Homepage">
       {isLoading ? (
-        <CircularProgress
-          isLoading={isLoading}
-          style={{ position: 'fixed', top: '50%', left: '50%' }}
-        />
+        <Loader isLoading={isLoading} />
       ) : (
         <Container className="animate">
           <Row className="mainsection">
             <Col>
               <h1 className="mainheader">Благодійний Фонд</h1>
-              <h2>"Духовність та здоров'я Нації" </h2>
+              <h2>{`"Духовність та здоров'я Нації"`}</h2>
               <h6 className="maintext">Наша мета робити життя людей здоровим і якісним</h6>
               <h6 className="maintext">Приєднуйтесь до нас!</h6>
               <ButtonPayload />
             </Col>
             <Col>
-              <img src={helphand} alt="" width="600" height="500" />
+              <img src={helphand} alt="" width="600" height="500"/>
             </Col>
           </Row>
           <Row>
             <Col>
-              <Cards />
+              <Cards cards={cards}/>
             </Col>
           </Row>
         </Container>
@@ -48,4 +46,4 @@ function Homepage() {
   );
 }
 
-export default Homepage;
+export {Homepage};

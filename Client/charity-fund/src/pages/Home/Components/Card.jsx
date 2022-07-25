@@ -1,23 +1,29 @@
 import React from 'react';
 import './Card.css';
+import PropTypes from 'prop-types';
 
-function Card(props) {
+function Card({card}) {
+      /* eslint-disable import/prefer-default-export */
   return (
-    <div class="card" style={{ margin: '16px', width: '18rem', textAlign: 'center' }}>
-      <img src={props.card.img} class="card-img-top" alt="" />
-      <div class="card-body">
-        <h5 class="card-title" style={{ textAlign: 'center' }}>
-          {props.card.title}
+    <div className="card">
+      <img src={card.img} className="card-img-top" alt="" />
+      <div className="card-body">
+        <h5 className="card-title">
+          {card.title}
         </h5>
-        <p class="card-text" style={{ textAlign: 'center' }}>
-          {props.card.text}
+        <p className="card-text">
+          {card.text}
         </p>
-        <a href={props.card.link} class="btn btn-primary">
-          Дізнатись більше{' '}
+        <a href={card.link} className="btn btn-primary">
+          Дізнатись більше
         </a>
       </div>
     </div>
   );
 }
-
-export default Card;
+Card.PropTypes.shape({
+  img: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  text: PropTypes.string.isRequired
+})
+export  {Card};

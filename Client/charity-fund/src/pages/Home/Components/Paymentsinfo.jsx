@@ -1,10 +1,11 @@
 import React from 'react';
 import { Accordion } from 'react-bootstrap';
+import "./Paymentsinfo.css"
 
 export default function Paymentsinfoblock() {
   return (
-    <Accordion defaultActiveKey="0" style={{ width: '80%', margin: '2% auto' }}>
-      <Accordion.Item eventKey="0" style={{ width: '27rem' }}>
+    <Accordion defaultActiveKey="0" className="accordion">
+      <Accordion.Item eventKey="0" className="accordion-item">
         <Accordion.Header>Реквізити у криптовалюті</Accordion.Header>
         <Accordion.Body>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt

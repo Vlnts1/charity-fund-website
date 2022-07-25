@@ -1,7 +1,15 @@
 {
-    "parser": "babel-eslint",
+    "parser": "@babel/eslint-parser",
     "parserOptions": {
+        "babelOptions": {
+            "babelrc": false,
+            "configFile": false,
+            "parserOpts": {
+              "plugins": ["jsx"]
+            }
+          },
     "sourceType": "module",
+    "requireConfigFile": false,
     "allowImportExportEverywhere": false,
     "codeFrame": false
 },
@@ -14,7 +22,7 @@
     "max-len": ["error", {"code": 100}],
     "prefer-promise-reject-errors": ["off"],
     "react/jsx-filename-extension": ["off"],
-    "react/prop-types": ["warn"],
+    "react/prop-types": "off",
     "no-return-assign": ["off"]
   }
 }
